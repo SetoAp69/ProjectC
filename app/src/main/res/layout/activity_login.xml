@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity"
+    android:orientation="vertical"
+    android:background="#CEFCFF">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="187dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        app:srcCompat="@drawable/vrouwcot_removebg_preview" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/Poppins_Bold"
+        android:text="@string/login"
+        android:textSize="28sp"
+        android:textStyle="bold"
+
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your email"
+        android:textSize="12sp"
+        android:fontFamily="@font/Poppins_Regular"
+        android:layout_marginTop="39dp"
+        android:layout_marginHorizontal="25dp"
+        android:paddingLeft="17dp"
+        android:paddingVertical="15dp"
+        android:background="@drawable/edit_text_background"
+
+
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your password"
+        android:textSize="12sp"
+        android:fontFamily="@font/Poppins_Regular"
+        android:layout_marginTop="39dp"
+        android:layout_marginHorizontal="25dp"
+        android:paddingLeft="17dp"
+        android:paddingVertical="15dp"
+        android:background="@drawable/edit_text_background"
+        android:drawableEnd="@drawable/outline_visibility_24"
+        android:paddingEnd="20dp"
+
+
+
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Login"
+        android:text_height=""
+        android:textAlignment="center"
+        android:fontFamily="@font/Poppins_Bold"
+        android:layout_marginTop="60dp"
+        android:layout_marginHorizontal="25dp"
+        android:textSize="24dp"
+        android:textColor="@color/white"
+        android:background="@color/blue"
+
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Doens't have an account? "
+        android:fontFamily="@font/Poppins_Regular"
+        android:textSize="14sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:text="Create Account"
+        android:fontFamily="@font/Poppins_Regular"
+        android:layout_gravity="center"
+        android:textColor="#2F89FC"
+        />
+
+
+
+</LinearLayout>
