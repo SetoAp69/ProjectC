@@ -15,7 +15,7 @@
         android:layout_height="187dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/vrouwcot_removebg_preview" />
+        app:srcCompat="@drawable/iconAndroid" />
 
     <TextView
         android:layout_width="wrap_content"
