@@ -13,18 +13,22 @@
         android:theme="@style/Theme.ProjectC"
         tools:targetApi="31">
         <activity
-            android:name=".ui.RegistrationActivity"
+            android:name=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.RegistrationActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/SplashScreen">
+            android:name=".SplashActivity"
+            android:exported="true">
+<!--            android:theme="@style/SplashScreen"-->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
