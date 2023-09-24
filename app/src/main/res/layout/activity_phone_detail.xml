@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.PhoneDetailActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/baseline_reorder_24"
+        android:fontFamily="@font/poppins_bold"
+        android:paddingLeft="15dp"
+        android:text="This App"
+        android:textAlignment="center"
+        android:textSize="23dp"
+
+        />
+
+    <TextView
+        android:id="@+id/phoneTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phone Name"
+        android:textSize="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/title"
+        android:layout_marginLeft="15dp"
+        android:fontFamily="@font/poppins_bold"
+
+        />
+    <ImageView
+        android:id="@+id/phoneImg"
+        android:layout_width="150dp"
+        android:layout_height="195dp"
+        android:layout_below="@id/phoneTitle"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        />
+    <TextView
+        android:id="@+id/qs_soc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/phoneImg"
+        android:layout_marginLeft="15dp"
+        android:layout_alignTop="@id/phoneImg"
+        android:text="Soc"
+        android:textSize="25dp"/>
+    <TextView
+        android:id="@+id/qs_memory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/phoneImg"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/qs_soc"
+        android:text="Memory"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"/>
+    <TextView
+        android:id="@+id/qs_display"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/phoneImg"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/qs_memory"
+        android:text="Display"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/qs_camera"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/phoneImg"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@id/qs_display"
+        android:text="Camera"
+        android:layout_marginTop="5dp"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/detailed_spec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Detailed Spesification"
+        android:layout_below="@id/phoneImg"
+         android:layout_marginTop="20dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="18dp"
+        android:layout_marginHorizontal="15dp"
+        />
+    <TextView
+        android:id="@+id/label_network"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailed_spec"
+        android:text="Network"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#359DEA"
+        android:textSize="15dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/network1"
+        android:layout_alignTop="@id/label_network"
+        android:layout_toRightOf="@id/label_network"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Technology"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_network1"
+        android:text="Data Network 1"
+        android:layout_alignTop="@id/label_network"
+        android:layout_toRightOf="@id/network1"
+        android:layout_marginLeft="8dp"
+
+
+        />
+    <TextView
+        android:id="@+id/label_launch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/data_network1"
+        android:text="Launch"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:textColor="#359DEA"
+        android:textSize="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/launch1"
+        android:layout_alignTop="@id/label_launch"
+        android:layout_toRightOf="@id/label_network"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Announced"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_launch1"
+        android:text="Data launch 1"
+        android:layout_alignTop="@id/label_launch"
+        android:layout_toRightOf="@id/network1"
+        android:layout_marginLeft="8dp"
+
+
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/launch2"
+        android:layout_below="@id/launch1"
+        android:layout_toRightOf="@id/label_network"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Status"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/data_launch2"
+        android:text="Data launch 2"
+        android:layout_below="@id/launch1"
+        android:layout_toRightOf="@id/network1"
+        android:layout_marginLeft="8dp"
+
+
+        />
+</RelativeLayout>
