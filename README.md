@@ -4,4 +4,4 @@ Project ini dibuat Oleh:
 2. Seto Apriawan (21520241012)
 
 Project  akan membuat aplikasi untuk mengecek semua smartphone spesifikasi, harga, dll.
-Terdapat beberapa Branch yang dipakai pada Project ini!!
+Terdapat beberapa Branch yang dipakai pada Project ini agar lebih mudah merollback jika ada kesalahan.
