@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.PhoneDetailActivity">
+    tools:context=".ui.PhoneDetailActivity"
+    android:background="#CEFCFF">
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -16,7 +17,7 @@
         android:drawableStart="@drawable/baseline_reorder_24"
         android:fontFamily="@font/poppins_bold"
         android:paddingLeft="15dp"
-        android:text="This App"
+        android:text="Project C"
         android:textAlignment="center"
         android:textSize="23dp"
 
