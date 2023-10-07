@@ -15,9 +15,25 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, RegistrationActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         },3000)
+    }
+    override fun onStart() {
+        super.onStart()
+    }
+    override fun onPause() {
+        super.onPause()
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
     }
 
 }

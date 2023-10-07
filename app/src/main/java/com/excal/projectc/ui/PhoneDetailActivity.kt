@@ -9,4 +9,20 @@ class PhoneDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_detail)
     }
+    override fun onStart() {
+        super.onStart()
+    }
+    override fun onPause() {
+        super.onPause()
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+    }
 }

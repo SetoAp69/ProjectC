@@ -36,7 +36,7 @@
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="wrap_content"/>
     <ScrollView
 
         android:layout_width="match_parent"
@@ -551,7 +551,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textColor="#359DEA"
                 android:textSize="15dp"
-                android:layout_marginTop="5dp"
+
                 />
             <TextView
                 android:layout_width="75dp"

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.widget.TextView
 import com.excal.projectc.R
 
@@ -23,6 +24,30 @@ class RegistrationActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        Log.i("Android Lifecycle Reg ","On Create")
+
+
+    }
+    override fun onStart() {
+        super.onStart()
+        Log.i("Android Lifecycle Reg ","On Start")
+
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("Android Lifecycle Reg ","On Pause")
+
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Android Lifecycle Reg ","On Destroy")
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Android Lifecycle Reg ","On Stop")
 
     }
 }

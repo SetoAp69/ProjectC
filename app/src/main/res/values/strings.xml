@@ -3,4 +3,6 @@
     <string name="registration">Registration Page</string>
     <string name="login">Login Page</string>
     <string name="splash">AndroidBase</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
