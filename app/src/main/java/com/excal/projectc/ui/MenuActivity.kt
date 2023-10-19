@@ -14,10 +14,13 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var viewAdapter : PhoneAdapter
     private lateinit var viewManager:RecyclerView.LayoutManager
     private lateinit var viewManager2:RecyclerView.LayoutManager
+    private lateinit var viewManager3:RecyclerView.LayoutManager
 
     private lateinit var viewModel: PhoneViewModel
     private lateinit var viewModel2:PhoneInStoreViewModel
+    private lateinit var viewModel3:TopTenPhoneViewModel
     private lateinit var viewAdapter2:PhoneInStoreAdapter
+    private lateinit var viewAdapter3:TopTenPhoneAdapter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 //        setContentView(R.layout.activity_menu)
@@ -27,21 +30,29 @@ class MenuActivity : AppCompatActivity() {
 
         viewManager = LinearLayoutManager(this,HORIZONTAL,false)
         viewManager2 = LinearLayoutManager(this,HORIZONTAL,false)
+        viewManager3= LinearLayoutManager(this, HORIZONTAL,false)
         viewAdapter= PhoneAdapter(viewModel)
 
         viewModel2=ViewModelProvider(this)[PhoneInStoreViewModel::class.java]
         viewAdapter2=PhoneInStoreAdapter(viewModel2)
 
+        viewModel3=ViewModelProvider(this)[TopTenPhoneViewModel::class.java]
+        viewAdapter3=TopTenPhoneAdapter(viewModel3)
+
         binding.latestDevice.apply{
             layoutManager=viewManager
             adapter = viewAdapter
         }
-
+//
         binding.inStore.apply{
-            layoutManager=viewManager
+            layoutManager=viewManager2
             adapter=viewAdapter2
         }
 
+        binding.topTen.apply{
+            layoutManager=viewManager3
+            adapter=viewAdapter3
+        }
 
 //        val mFragManager = supportFragmentManager
 //        val fragment=PhoneList()

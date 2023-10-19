@@ -1,7 +1,10 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+
 }
+
 
 android {
     namespace = "com.excal.projectc"
@@ -36,9 +39,13 @@ android {
     buildFeatures{
         viewBinding=true
     }
+
 }
 
+
 dependencies {
+
+
 
     implementation ("androidx.navigation:navigation-fragment-ktx:2.6.0")
     implementation ("androidx.navigation:navigation-ui-ktx:2.6.0")
@@ -54,21 +61,29 @@ dependencies {
     //LiveData
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.1")
-    annotationProcessor("androidx.lifecycle:lifecycle-compiler:2.6.1")
+    kapt("androidx.lifecycle:lifecycle-compiler:2.6.1")
 
     //RecyclerView
     implementation("androidx.recyclerview:recyclerview:1.3.1")
 
-
+    //Coroutines
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
     //Retrofit
-//    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-//    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-//    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
-//
-//    //Glide
-//    implementation("com.github.bumptech.glide:glide:4.14.1")
-//    annotationProcessor("com.github.bumptech.glide:compiler:4.13.2")
-//
-//    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.9.0")
+
+    //Glide menampilkan avatar dari url
+    implementation("com.github.bumptech.glide:glide:4.14.1")
+    kapt("com.github.bumptech.glide:compiler:4.13.2")
+    //untuk menampilkan gambar circle
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+
+    //ROOM Database
+    implementation ("androidx.room:room-runtime:2.5.0")
+    implementation ("androidx.room:room-ktx:2.5.0")
+    kapt ("androidx.room:room-compiler:2.5.0")
+
+
 
 }

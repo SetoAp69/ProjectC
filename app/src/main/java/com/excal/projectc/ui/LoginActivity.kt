@@ -18,10 +18,11 @@ class LoginActivity : AppCompatActivity() {
         buttonClick.setOnClickListener {
             val intent = Intent(this, MenuActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
-        val registeClick = findViewById<TextView>(R.id.button2)
-        registeClick.setOnClickListener {
+        val registerClick = findViewById<TextView>(R.id.button2)
+        registerClick.setOnClickListener {
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
 
