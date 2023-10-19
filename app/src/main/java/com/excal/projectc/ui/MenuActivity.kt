@@ -38,7 +38,7 @@ class MenuActivity : AppCompatActivity() {
         }
 
         binding.inStore.apply{
-            layoutManager=viewManager2
+            layoutManager=viewManager
             adapter=viewAdapter2
         }
 
