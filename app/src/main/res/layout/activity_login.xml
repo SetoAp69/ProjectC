@@ -58,6 +58,7 @@
         android:background="@drawable/edit_text_background"
         android:drawableEnd="@drawable/outline_visibility_24"
         android:paddingEnd="20dp"
+        android:inputType="textPassword"
         />
 
     <Button

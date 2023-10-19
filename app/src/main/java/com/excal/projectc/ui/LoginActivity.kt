@@ -56,12 +56,18 @@ class LoginActivity : AppCompatActivity() {
                                 val intent = Intent(this@LoginActivity, MenuActivity::class.java)
                                 startActivity(intent)
                                 finish()
+
                             }
 
 
                         }
                         else{
-                            Toast.makeText(this@LoginActivity, "Email or Password are wrong", Toast.LENGTH_SHORT).show()
+                            withContext(Dispatchers.Main){
+                                val intent = Intent(this@LoginActivity, MenuActivity::class.java)
+                                Toast.makeText(this@LoginActivity, "Email or Password are wrong", Toast.LENGTH_SHORT).show()
+
+
+                            }
 
                         }
                     }else{
