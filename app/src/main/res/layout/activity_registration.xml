@@ -21,6 +21,7 @@
 
         />
     <EditText
+        android:id="@+id/usernameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Create Username"
@@ -35,9 +36,11 @@
 
         />
     <EditText
+        android:id="@+id/emailEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your email"
+
         android:textSize="12sp"
         android:fontFamily="@font/poppins_regular"
         android:layout_marginTop="39dp"
@@ -49,6 +52,7 @@
 
         />
     <EditText
+        android:id="@+id/passwordEditText1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Create password"
@@ -67,6 +71,7 @@
         />
 
     <EditText
+        android:id="@+id/passwordEditText2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Re enter the password"
@@ -88,6 +93,7 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="Create Account"
+        android:id="@+id/createAccountButton"
         android:fontFamily="@font/poppins_bold"
         android:layout_marginTop="39dp"
         android:layout_marginHorizontal="25dp"
