@@ -19,7 +19,7 @@ class PhoneAdapter(private val viewModel: PhoneViewModel):RecyclerView.Adapter<P
     }
 
     override fun onBindViewHolder(holder: PhoneViewHolder, position: Int) {
-        holder.binding.phoneTitle.text=viewModel.phoneList.value!![position].title
+        holder.binding.phoneTitle.text=viewModel.phoneList.value!![position].name
     }
 
     override fun getItemCount(): Int {

@@ -1,0 +1,15 @@
+{
+  "name": "projectc",
+  "version": "1.0.0",
+  "description": "Project ini dibuat Oleh:\r 1. Desta Hutama Putra (21520241004)\r 2. Seto Apriawan (21520241012)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gsmarena-api": "^2.0.4"
+  }
+}

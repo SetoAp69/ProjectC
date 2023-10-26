@@ -85,5 +85,14 @@ dependencies {
     kapt ("androidx.room:room-compiler:2.5.0")
 
 
+    //Graalvm
+    implementation("org.graalvm.js:js:21.3.0")
+
+    implementation("com.google.code.gson:gson:2.8.8" )// Use the appropriate version
+
+    implementation ("com.squareup.okhttp3:okhttp:4.9.0")
+
+
+
 
 }

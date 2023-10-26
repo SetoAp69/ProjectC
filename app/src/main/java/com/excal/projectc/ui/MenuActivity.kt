@@ -1,5 +1,7 @@
 package com.excal.projectc.ui
 
+import ApiService
+import TopTenPhoneViewModel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -8,6 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView
 import com.excal.projectc.databinding.ActivityMenuBinding
+
+import android.webkit.WebView
+import android.webkit.WebViewClient
+import okhttp3.OkHttpClient
+import okhttp3.Request
+
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMenuBinding
@@ -53,6 +61,19 @@ class MenuActivity : AppCompatActivity() {
             layoutManager=viewManager3
             adapter=viewAdapter3
         }
+
+
+
+
+//        val webView = findViewById<WebView>(this)
+//        webView.settings.javaScriptEnabled = true
+//
+//        // Set a WebViewClient to handle navigation within the WebView
+//        webView.webViewClient = WebViewClient()
+//
+//        // Load the HTML file from the assets folder
+//        webView.loadUrl("data.html")
+
 
 //        val mFragManager = supportFragmentManager
 //        val fragment=PhoneList()
