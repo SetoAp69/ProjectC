@@ -62,7 +62,7 @@
             android:orientation="horizontal"
             android:layout_marginLeft="15dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:id="@+id/latest_device"
+            android:id="@+id/rv_top_by_user"
             tools:listitem="@layout/phone_list_data"
 
             />
@@ -87,7 +87,7 @@
         android:orientation="horizontal"
         android:layout_marginLeft="15dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/in_store"
+        android:id="@+id/rv_hot_deals"
         tools:listitem="@layout/phone_list_data"
 
         />
@@ -111,7 +111,7 @@
         android:orientation="horizontal"
         android:layout_marginLeft="15dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/top_ten"
+        android:id="@+id/rv_top_ten"
         tools:listitem="@layout/phone_list_data"
 
         />

@@ -84,6 +84,14 @@ dependencies {
     implementation ("androidx.room:room-ktx:2.5.0")
     kapt ("androidx.room:room-compiler:2.5.0")
 
+    //j2v8
+    implementation("com.eclipsesource.j2v8:j2v8:5.0.0@aar")
+
+    implementation("io.didomi.sdk:android:1.79.0")
+
+    //Gson
+    implementation("com.google.code.gson:gson:2.8.8")
+
 
 
 }

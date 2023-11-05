@@ -12,7 +12,7 @@
         android:paddingHorizontal="12dp">
 
         <ImageView
-            android:id="@+id/img"
+            android:id="@+id/iv_img"
             android:layout_width="100dp"
             android:layout_height="130dp"
             android:src="@drawable/ic_launcher_background"
@@ -20,8 +20,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="title"
-            android:id="@+id/phone_title"
+            android:text="tv_title"
+            android:id="@+id/tv_title"
             android:textAlignment="center"/>
 
     </LinearLayout>
