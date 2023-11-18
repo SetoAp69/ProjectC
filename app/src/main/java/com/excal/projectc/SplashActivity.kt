@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.excal.projectc.ui.LoginActivity
 import com.excal.projectc.ui.MenuActivity
 
 class SplashActivity : AppCompatActivity() {
@@ -13,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MenuActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         },3000)
     }
