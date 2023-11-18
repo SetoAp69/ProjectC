@@ -67,9 +67,8 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.makeText(this@LoginActivity, "Email or Password are wrong", Toast.LENGTH_SHORT).show()
 
 
-                            }
 
-                        }
+                            }
                     }else{
                         Toast.makeText(this@LoginActivity, "Email not found", Toast.LENGTH_SHORT).show()
 
