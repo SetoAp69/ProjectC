@@ -92,6 +92,9 @@ dependencies {
     //Gson
     implementation("com.google.code.gson:gson:2.8.8")
 
+    //Koin
+    implementation("io.insert-koin:koin-android:3.4.1")
+
 
 
 }

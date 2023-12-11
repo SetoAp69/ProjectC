@@ -1,14 +1,14 @@
 package com.excal.projectc.ui
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
-import com.excal.projectc.R
 import android.content.Intent
-import android.widget.Button
-import android.widget.TextView
+import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.excal.projectc.R
 import com.excal.projectc.data.roomdatabase.UserDatabase
 import com.excal.projectc.data.roomdatabase.UserEntity
 import kotlinx.coroutines.Dispatchers
@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
             if(email.isEmpty()||password.isEmpty()){
                 Toast.makeText(this, "Password and/or Email can't be empty", Toast.LENGTH_SHORT).show()
-                    return@setOnClickListener
+                return@setOnClickListener
             }else{
                 GlobalScope.launch(Dispatchers.IO){
                     val emailValid = isEmailValid(email)
@@ -67,8 +67,9 @@ class LoginActivity : AppCompatActivity() {
                                 Toast.makeText(this@LoginActivity, "Email or Password are wrong", Toast.LENGTH_SHORT).show()
 
 
-
                             }
+
+                        }
                     }else{
                         Toast.makeText(this@LoginActivity, "Email not found", Toast.LENGTH_SHORT).show()
 
@@ -81,7 +82,6 @@ class LoginActivity : AppCompatActivity() {
 
         val registerClick = findViewById<TextView>(R.id.button2)
         registerClick.setOnClickListener {
-
 
             val intent = Intent(this, RegistrationActivity::class.java)
             startActivity(intent)
