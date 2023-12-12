@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.excal.projectc.ui.LoginActivity
 import com.excal.projectc.ui.MenuActivity
 
 class SplashActivity : AppCompatActivity() {

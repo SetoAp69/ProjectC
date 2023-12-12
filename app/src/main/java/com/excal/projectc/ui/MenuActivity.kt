@@ -1,5 +1,15 @@
 package com.excal.projectc.ui
 
+import android.content.Intent
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
+import com.excal.projectc.databinding.ActivityMenuBinding
+import com.excal.projectc.databinding.ActivityMainBinding
+import com.google.android.material.navigation.NavigationView
 import Data.PhoneInStoreAdapter
 import Data.TopTenPhoneAdapter
 import Data.TopTenPhoneByUserAdapter
@@ -10,11 +20,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView
 import com.excal.projectc.ApiService
-import com.excal.projectc.databinding.ActivityMenuBinding
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import android.view.Window
+import com.excal.projectc.AboutFragment
+import com.excal.projectc.HomeFragment
+import com.excal.projectc.SettingsFragment
+import com.excal.projectc.ShareFragment
+import com.excal.projectc.R
 
-class MenuActivity : AppCompatActivity() {
+
+class MenuActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
     private lateinit var binding : ActivityMenuBinding
     private lateinit var viewAdapter : TopTenPhoneByUserAdapter
     private lateinit var viewManager:RecyclerView.LayoutManager
@@ -26,50 +43,65 @@ class MenuActivity : AppCompatActivity() {
     private lateinit var viewModel3:TopTenPhoneViewModel
     private lateinit var viewAdapter2: PhoneInStoreAdapter
     private lateinit var viewAdapter3: TopTenPhoneAdapter
+
+    private lateinit var drawerLayout: DrawerLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        setContentView(R.layout.activity_menu)
-        binding= ActivityMenuBinding.inflate(layoutInflater)
+        binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-  //      viewModel= ViewModelProvider(this)[PhoneViewModel::class.java]
 
-        viewManager = LinearLayoutManager(this,HORIZONTAL,false)
-        viewManager2 = LinearLayoutManager(this,HORIZONTAL,false)
-        viewManager3= LinearLayoutManager(this, HORIZONTAL,false)
-      //  viewAdapter= PhoneAdapter(viewModel)
+        drawerLayout = binding.drawerLayout
+        val toolbar: Toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
 
-//        viewModel2=ViewModelProvider(this)[PhoneInStoreViewModel::class.java]
-//        viewAdapter2= PhoneInStoreAdapter(viewModel2)
+        val navigationView: NavigationView = binding.navView
+        navigationView.setNavigationItemSelectedListener(this)
 
-//        viewModel3=ViewModelProvider(this)[TopTenPhoneViewModel::class.java]
-//        viewAdapter3=TopTenPhoneAdapter(viewModel3)
-//
-//        binding.latestDevice.apply{
-//            layoutManager=viewManager
-//            adapter = viewAdapter
-//        }
-//
-//        binding.inStore.apply{
-//            layoutManager=viewManager2
-//            adapter=viewAdapter2
-//        }
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.open_nav,
+            R.string.close_nav
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .commit()
+            navigationView.setCheckedItem(R.id.nav_home)
+        }
+
+        // Call your functions here
         getTopDaily()
         getHotDeals()
         getTopByUser()
+    }
 
-
-
-//        val mFragManager = supportFragmentManager
-//        val fragment=PhoneList()
-//        val frag = mFragManager.findFragmentByTag(PhoneList::class.java.simpleName)
-//        if(frag !is PhoneList ){
-//            mFragManager
-//                .beginTransaction()
-//                .add(R.id.fragment_container, fragment,PhoneList::class.java.simpleName)
-//                .commit()
-//        }
-
-
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .commit()
+            R.id.nav_settings -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SettingsFragment())
+                .commit()
+            R.id.nav_share -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ShareFragment())
+                .commit()
+            R.id.nav_about -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AboutFragment())
+                .commit()
+            R.id.nav_logout -> {
+                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+                // Add logout logic here if needed
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onStart() {
@@ -140,8 +172,8 @@ class MenuActivity : AppCompatActivity() {
                     }
 
 
+                }
             }
-        }
             override fun onFailure(call: retrofit2.Call<List<TopTenPhoneDailyItem>>, t: Throwable) {
                 t.printStackTrace()
             }
