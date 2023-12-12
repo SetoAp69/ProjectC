@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="ProjectC"
+        android:text="Project C"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/poppins_regular"
         android:textSize="23dp"
@@ -48,6 +48,7 @@
 
     <TextView
         android:layout_width="wrap_content"
+        android:id="@+id/title"
         android:layout_height="wrap_content"
         android:text="Latest Device"
         android:layout_marginLeft="15dp"
@@ -59,66 +60,27 @@
         android:drawablePadding="5dp"
         />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:layout_gravity="fill_vertical"
-            android:orientation="horizontal"
-            android:layout_marginLeft="15dp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:id="@+id/rv_top_by_user"
-            tools:listitem="@layout/phone_list_data"
-
-            />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/baseline_circle_24"
-        android:text="In Stores Now"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="#359DEA"
-        android:textSize="18dp"
-        android:layout_marginLeft="15dp"
-        />
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_gravity="fill_vertical"
-        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal"
+        android:orientation="vertical"
         android:layout_marginLeft="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/rv_hot_deals"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
+        android:id="@+id/rv_top_by_user"
         tools:listitem="@layout/phone_list_data"
 
         />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:drawableStart="@drawable/baseline_circle_24"
-        android:text="Top 10 By Daily Interest"
-        android:drawablePadding="5dp"
-        android:fontFamily="@font/poppins_bold"
-        android:textColor="#359DEA"
-        android:textSize="18dp"
-        android:layout_marginLeft="15dp"
-        />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_gravity="fill_vertical"
-        android:orientation="horizontal"
-        android:layout_marginLeft="15dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/rv_top_ten"
-        tools:listitem="@layout/phone_list_data"
 
-        />
+
+
+
+
+
+
 
 
 </LinearLayout>

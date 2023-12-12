@@ -16,7 +16,7 @@
         android:drawableStart="@drawable/baseline_reorder_24"
         android:fontFamily="@font/poppins_bold"
         android:paddingLeft="15dp"
-        android:text="This App"
+        android:text="ProjectC"
         android:textAlignment="center"
         android:textSize="23dp"
 

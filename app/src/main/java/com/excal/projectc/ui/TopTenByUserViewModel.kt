@@ -7,19 +7,20 @@ import com.excal.projectc.data.TopTenPhoneDailyItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-class HotDealsViewModel(private val repository: Repository): ViewModel() {
-    private val _hotDealsData = MutableLiveData<List<TopTenPhoneDailyItem>>()
-    val hotDealsData: LiveData<List<TopTenPhoneDailyItem>> get() = _hotDealsData
 
-    fun fetchHotDeals() {
 
-        repository.getHotDeals().enqueue(object : Callback<List<TopTenPhoneDailyItem>> {
+class TopTenByUserViewModel (private val repository: Repository): ViewModel(){
+    private val _topTenByUserData = MutableLiveData<List<TopTenPhoneDailyItem>>()
+    val topTenByUserData:LiveData<List<TopTenPhoneDailyItem>> get() = _topTenByUserData
+
+    fun fetchTopTenByUser(){
+        repository.getTopTenByUser().enqueue(object : Callback<List<TopTenPhoneDailyItem>> {
             override fun onResponse(
                 call: Call<List<TopTenPhoneDailyItem>>,
                 response: Response<List<TopTenPhoneDailyItem>>
             ) {
-                if (response.isSuccessful) {
-                    _hotDealsData.value = response.body()
+                if(response.isSuccessful){
+                    _topTenByUserData.value=response.body()
                 }
             }
 
