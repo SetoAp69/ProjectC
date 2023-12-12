@@ -2,27 +2,39 @@ package com.excal.projectc.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.view.inputmethod.EditorInfo
+import android.widget.Toast
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL
 import androidx.recyclerview.widget.RecyclerView
+import com.excal.projectc.AboutFragment
+import com.excal.projectc.HomeFragment
+import com.excal.projectc.R
 import com.excal.projectc.Search
+import com.excal.projectc.SettingsFragment
+import com.excal.projectc.ShareFragment
 import com.excal.projectc.data.PhoneInStoreAdapter
 import com.excal.projectc.data.TopTenDailyAdapter
 import com.excal.projectc.data.TopTenPhoneByUserAdapter
 import com.excal.projectc.data.TopTenPhoneDailyItem
 import com.excal.projectc.data.remote.ApiService
 import com.excal.projectc.databinding.ActivityMenuBinding
+import com.google.android.material.navigation.NavigationView
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 
 
 class MenuActivity : AppCompatActivity() , PhoneInStoreAdapter.onItemClick, TopTenDailyAdapter.onItemCLick, TopTenPhoneByUserAdapter.onItemClick,
-    KoinComponent {
+    KoinComponent, NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding : ActivityMenuBinding
     private lateinit var viewManager:RecyclerView.LayoutManager
     private lateinit var viewManager2:RecyclerView.LayoutManager
@@ -32,7 +44,7 @@ class MenuActivity : AppCompatActivity() , PhoneInStoreAdapter.onItemClick, TopT
     private val topTenByUserViewModel : TopTenByUserViewModel by viewModel()
 
 
-
+    private lateinit var drawerLayout: DrawerLayout
     private val apiService: ApiService by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,6 +52,31 @@ class MenuActivity : AppCompatActivity() , PhoneInStoreAdapter.onItemClick, TopT
 
         binding= ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        drawerLayout = binding.drawerLayout
+        val toolbar: Toolbar = binding.toolbar
+        setSupportActionBar(toolbar)
+
+        val navigationView: NavigationView = binding.navView
+        navigationView.setNavigationItemSelectedListener(this)
+
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.open_nav,
+            R.string.close_nav
+        )
+        drawerLayout.addDrawerListener(toggle)
+        toggle.syncState()
+
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .commit()
+            navigationView.setCheckedItem(R.id.nav_home)
+        }
+
         val editTextSearch =binding.editTextSearch
         editTextSearch.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_SEARCH) {
@@ -67,6 +104,28 @@ class MenuActivity : AppCompatActivity() , PhoneInStoreAdapter.onItemClick, TopT
 
     }
     private fun search(){
+    }
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.nav_home -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment())
+                .commit()
+            R.id.nav_settings -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, SettingsFragment())
+                .commit()
+            R.id.nav_share -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, ShareFragment())
+                .commit()
+            R.id.nav_about -> supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, AboutFragment())
+                .commit()
+            R.id.nav_logout -> {
+                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+                // Add logout logic here if needed
+            }
+        }
+        drawerLayout.closeDrawer(GravityCompat.START)
+        return true
     }
 
     override fun onStart() {

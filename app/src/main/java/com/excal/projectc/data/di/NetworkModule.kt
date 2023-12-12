@@ -9,16 +9,16 @@ import java.util.concurrent.TimeUnit
 val networkModule = module {
     single<OkHttpClient> {
         OkHttpClient.Builder()
-            .callTimeout(2, TimeUnit.MINUTES)
-            .connectTimeout(2, TimeUnit.MINUTES)
-            .readTimeout(2, TimeUnit.MINUTES)
-            .writeTimeout(2, TimeUnit.MINUTES)
+            .callTimeout(20, TimeUnit.MINUTES)
+            .connectTimeout(20, TimeUnit.MINUTES)
+            .readTimeout(20, TimeUnit.MINUTES)
+            .writeTimeout(20, TimeUnit.MINUTES)
             .build()
     }
 
     single<Retrofit> {
         Retrofit.Builder()
-            .baseUrl("http://192.168.1.4:3001/TopTenDaily/")
+            .baseUrl("http://192.168.25.35:3001/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()
