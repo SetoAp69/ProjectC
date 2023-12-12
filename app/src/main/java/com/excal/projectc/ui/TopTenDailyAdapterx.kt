@@ -1,6 +1,5 @@
 package com.excal.projectc.ui
 
-import Data.TopTenPhoneDailyItem
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -10,8 +9,9 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.excal.projectc.R
+import com.excal.projectc.data.TopTenPhoneDailyItem
 
-class TopTenDailyAdapter (var context: Context,var list:List<TopTenPhoneDailyItem>): RecyclerView.Adapter<TopTenDailyAdapter.ViewHolder>(){
+class TopTenDailyAdapterx (var context: Context, var list:List<TopTenPhoneDailyItem>): RecyclerView.Adapter<TopTenDailyAdapterx.ViewHolder>(){
     inner class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val name: TextView =view.findViewById(R.id.tv_name)
         val image: ImageView =view.findViewById(R.id.iv_image)

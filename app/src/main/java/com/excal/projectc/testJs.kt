@@ -1,13 +1,14 @@
 package com.excal.projectc
 
-import Data.TopTenPhoneDailyItem
 import android.os.Bundle
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.excal.projectc.data.TopTenPhoneDailyItem
+import com.excal.projectc.data.remote.ApiService
 import com.excal.projectc.databinding.ActivityTestJsBinding
-import com.excal.projectc.ui.TopTenDailyAdapter
+import com.excal.projectc.ui.TopTenDailyAdapterx
 import com.google.gson.Gson
 import okhttp3.Call
 import okhttp3.Callback
@@ -21,7 +22,7 @@ import java.io.IOException
 class testJs : AppCompatActivity() {
 
     private lateinit var binding: ActivityTestJsBinding
-    private lateinit var viewAdapter: TopTenDailyAdapter
+    private lateinit var viewAdapter: TopTenDailyAdapterx
     private lateinit var viewManager: RecyclerView.LayoutManager
 
 
@@ -32,7 +33,7 @@ class testJs : AppCompatActivity() {
             .build()
             .create(ApiService::class.java)
 
-        retrofit.getUsers().enqueue(object : retrofit2.Callback<List<TopTenPhoneDailyItem>> {
+        retrofit.getTopDaily().enqueue(object : retrofit2.Callback<List<TopTenPhoneDailyItem>> {
             override fun onResponse(
                 call: retrofit2.Call<List<TopTenPhoneDailyItem>>,
                 response: retrofit2.Response<List<TopTenPhoneDailyItem>>
@@ -40,7 +41,7 @@ class testJs : AppCompatActivity() {
                 if (response.isSuccessful){
                     val data = response.body()!!
 
-                    viewAdapter = TopTenDailyAdapter(baseContext, data)
+                    viewAdapter = TopTenDailyAdapterx(baseContext, data)
                     binding.itemRv.apply {
                         layoutManager = viewManager
                         adapter = viewAdapter

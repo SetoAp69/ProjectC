@@ -1,4 +1,4 @@
-package Data
+package com.excal.projectc.data
 
 data class TopTenPhoneDailyItem(
     val position: Int,
